@@ -1,0 +1,12 @@
+$shade: (
+  01: #fff,
+  02: #222,
+);
+
+$pickled-bean: #614322;
+$sunglow: #Fbc734;
+
+// function to get color schemes
+@function get-color($color-name, $variation: 'default') {
+    @return map-get($map: $color-name, $key: $variation);
+  }
