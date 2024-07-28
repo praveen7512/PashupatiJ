@@ -1,0 +1,45 @@
+@import '../../../../theme/colors';
+@import '../../../../theme/spacing';
+@import '../../../../theme/typography';
+@import '../../../../theme/breakingpoints';
+@import '../../../../theme/mixins';
+
+.navBar {
+  &__container {
+    display: flex;
+    flex-direction: column;
+    background-color: get-color($neutral, 100);
+    border-right: $spacing-2 solid get-color($neutral, 04);
+  }
+
+  &__list {
+    list-style-type: none;
+    width: 70%;
+  }
+
+  &__listItem {
+    padding: $spacing-8;
+    transition: background-color 0.3s ease;
+    color: get-color($neutral, 06);
+    font-family: $primary-font;
+    font-size: $spacing-16;
+    font-weight: $font-weight-medium;
+    cursor: pointer;
+
+    &:hover {
+      background-color: darken(get-color($neutral, 01), 5%);
+      border-radius: $spacing-8;
+    }
+  }
+
+  &__selectedItem {
+    background-color: get-color($primary, 8);
+    border-radius: $spacing-8;
+    color: get-color($primary, 01);
+
+    &:hover {
+      background-color: darken(get-color($primary, 08), 5%);
+      border-radius: $spacing-8;
+    }
+  }
+}

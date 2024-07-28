@@ -1,0 +1,107 @@
+@import '../../theme/colors';
+@import '../../theme/spacing';
+@import '../../theme/typography';
+@import '../../theme/breakingpoints';
+@import '../../theme/mixins';
+
+.fmvButton {
+  &__container.MuiButton-root {
+    align-items: center;
+    background-color: get-color($neutral, 04);
+    border-radius: $spacing-8;
+    box-shadow: none;
+    color: $black;
+    font-family: $primary-font;
+    justify-content: center;
+    padding: $spacing-14 $spacing-24;
+    text-align: center;
+    text-transform: none;
+    }
+
+  &__greyContainer.MuiButton-root {
+    background-color: get-color($neutral, 04);
+  }
+
+  &__redContainer.MuiButton-root {
+    background-color: $tart-orange;
+    font-weight: $font-weight-medium;
+  }
+
+  &__purpleContainer.MuiButton-root {
+    background-color: $dark-orchid;
+    padding: $spacing-10 $spacing-14;
+  }
+
+  &__text.MuiTypography-root {
+    color: get-color($neutral, 100);
+    font-family: $primary-font;
+    font-size: $spacing-16;
+    font-weight: $font-weight-medium;
+    line-height: $spacing-20;
+    text-align: center;
+    @include sm {
+      font-size: $spacing-14;
+    }
+  }
+
+  &__transparent.MuiButton-root {
+    border: $spacing-1 solid get-color($neutral, 400);
+    display: flex;
+    padding: $spacing-10 $spacing-14;
+  }
+
+  &__disable.MuiButton-root {
+    background-color: get-color($neutral, 05) !important;
+    cursor: not-allowed;
+  }
+
+  &__disableText.MuiTypography-root {
+    color: get-color($neutral, 06);
+  }
+
+  &__borders.MuiButton-root {
+    border: $spacing-1 solid get-color($neutral, 400);
+    padding: $spacing-10 $spacing-14;
+  }
+
+  &__leftRounded.MuiButton-root {
+    background-color: get-color($neutral, 50);
+    border-radius: $spacing-8 $spacing-0 $spacing-0 $spacing-8;
+    padding: $spacing-4 $spacing-14;
+  }
+
+  &__rightRounded.MuiButton-root {
+    background-color: $lavender;
+    border-radius: $spacing-0 $spacing-8 $spacing-8 $spacing-0;
+    opacity: $spacing-0;
+    padding: $spacing-4 $spacing-14;
+  }
+
+  &__leftRoundedText.MuiTypography-root {
+    color: get-color($neutral, 500);
+    font-family: $primary-font;
+    font-size: $spacing-14;
+    font-weight: $font-weight-semi-bold;
+    line-height: $spacing-20;
+  }
+
+  &__rightRoundedText.MuiTypography-root {
+    color: $dark-orchid;
+    font-family: $primary-font;
+    font-size: $spacing-14;
+    font-weight: $font-weight-bold;
+    line-height: $spacing-20;
+  }
+
+  &__lightPurpleContainer.MuiButton-root {
+    background-color: $magnolia;
+  }
+
+  &__lightPurpleContainerText.MuiTypography-root {
+    color: $dark-orchid;
+    font-family: $primary-font;
+    font-size: $spacing-14;
+    font-weight: $font-weight-semi-bold;
+    line-height: $spacing-20;
+  }
+}

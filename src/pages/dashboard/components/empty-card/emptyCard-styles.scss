@@ -1,0 +1,38 @@
+@import '../../../../theme/colors';
+@import '../../../../theme/spacing';
+@import '../../../../theme/typography';
+@import '../../../../theme/breakingpoints';
+@import '../../../../theme/mixins';
+
+.emptyCard {
+    &__container {
+      align-items: center;
+      background-color: get-color($neutral, 100);
+      border-radius: $spacing-8;
+      border: $spacing-5 solid transparent;
+      box-shadow: 0 $spacing-1 $spacing-2 0 rgba(0, 0, 0, 0.05);
+      display: flex;
+      flex-direction: column;
+      height: 550px;
+      justify-content: center;
+      width: 91%;
+    }
+
+    &__icon {
+      cursor: pointer;
+      height: $spacing-84 !important;
+      width: $spacing-84 !important;
+    }
+
+    &__text.MuiTypography-root {
+      color: get-color($neutral, 08);
+      cursor: pointer;
+      font-family: $primary-font;
+      font-size: $spacing-20;
+      font-weight: $font-weight-medium;
+      line-height: $spacing-32;
+      @include sm {
+        font-size: $spacing-14;
+      }
+    }
+}

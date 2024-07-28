@@ -1,0 +1,76 @@
+@import '../../theme/colors';
+@import '../../theme/spacing';
+@import '../../theme/typography';
+@import '../../theme/breakingpoints';
+@import '../../theme/mixins';
+
+.tooltip {
+  &__container {
+    display: inline;
+    position: relative;
+    &:hover {
+      &:after {
+        background-color: get-color($neutral, 100);
+        border-radius: $spacing-16;
+        border: $spacing-1 solid get-color($neutral, 05);
+        color: get-color($neutral, 08);
+        content: attr(title);
+        font-family: $primary-font;
+        font-size: $spacing-14;
+        left: #{-$spacing-40};
+        max-width: $spacing-262;
+        min-width: $spacing-200;
+        padding: $spacing-16;
+        position: absolute;
+        text-wrap: wrap;
+        top: $spacing-35;
+        white-space: unset;
+        width: max-content;
+        z-index: 1;
+      }
+      &:before {
+        background-color: get-color($neutral, 100);
+        border-left: $spacing-1 solid $light-silver;
+        border-top: $spacing-1 solid $light-silver;
+        bottom: $spacing-0;
+        content: '';
+        display: block;
+        height: $spacing-16;
+        left: #{$spacing-12};
+        overflow: hidden;
+        position: absolute;
+        top: $spacing-28;
+        transform: rotate(45deg);
+        width: $spacing-16;
+        z-index: 2;
+      }
+    }
+  }
+  &__error {
+    &:hover:after {
+      color: $persimmon;
+    }
+  }
+}
+
+@include sm {
+  .tooltip {
+    &__container {
+      &:hover {
+        &:after {
+          border-radius: $spacing-16;
+          font-size: $spacing-14;
+          max-width: $spacing-0;
+          padding: $spacing-16;
+          top: $spacing-34;
+          white-space: wrap;
+        }
+        &:before {
+          height: $spacing-12;
+          left: $spacing-10;
+          width: $spacing-12;
+        }
+      }
+    }
+  }
+}

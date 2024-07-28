@@ -1,0 +1,43 @@
+.loginPage {
+  &__container {
+    display: flex;
+    height: 100vh; 
+    width: 100vw;
+    flex-direction: row; 
+  }
+
+  &__imageContainer {
+    flex: 1; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; 
+  }
+
+  &__contentContainer {
+    flex: 1; /* Take up 50% of the width */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+  }
+
+  &__button.MuiButton-root {
+    width: 50%;
+    margin-top: 20px;
+  }
+
+  &__inputField.MuiTextField-root {
+    width: 50%;
+  }
+
+  &__inputContainer {
+    
+  }
+}

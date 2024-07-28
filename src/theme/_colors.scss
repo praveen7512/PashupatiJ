@@ -1,12 +1,85 @@
+// $shade: (
+//   01: #fff,
+//   02: #222,
+// );
+
+// $pickled-bean: #614322;
+// $sunglow: #Fbc734;
+
+$primary: (
+  01: #fe4747,
+  02: #ff3939,
+  8: #fff5f5,
+);
+
+$neutral: (
+  01: #f7f7f7,
+  04: #d3d3d3,
+  06: #b0b0b0,
+  07: #717171,
+  08: #5e5e5e,
+  05: #dddddd,
+  50: #f0f1f3,
+  100: #ffffff,
+  300: #777980,
+  400: #858d9d,
+  450: #717171,
+  500: #667085,
+  600: #5e5e5e,
+);
+
 $shade: (
   01: #fff,
   02: #222,
 );
 
-$pickled-bean: #614322;
-$sunglow: #Fbc734;
-
+$albaster24: #f3e7e73d;
+$american-silver: #cecece;
+$anti-flash-white: #f2f4f6;
+$begonia: #fc7578;
+$black12: #0000001f;
+$black18: #00000030;
+$black3: #00000008;
+$black: #000000;
+$blueberry: #4990fb;
+$box-shadow: #0000004d;
+$bubbles: #eaf9f7;
+$caramel: #ffdc99;
+$caramel: #ffdc99;
+$charleston-green: #2c2b300a;
+$coral-red: #ff3939;
+$dark-orchid: #883dcf;
+$davy-grey: #5e5e5e;
+$floral-white: #fff8f5;
+$gainsboro: #dddddd;
+$granite-gray: #635e5f;
+$gray: #bdbdbd;
+$green: #008a05;
+$lavender-blush: #fff5f5;
+$lavender: #e7d8f5;
+$light-green: #f5faf5;
+$light-silver: #d9d9d9;
+$linen: #ffebeb;
+$magnolia: #f4ecfb;
+$mauvelous: #fa9eaa;
+$maximum-blue-green: #27c2b0;
+$metallic-pink-50: #f3afbc80;
+$pastel-red: #ff6b6b29;
+$persian-green: #039f8d;
+$persimmon: #f25700;
+$quartz: #4b4b4b;
+$queen-blue9: #3c5f8917;
+$radical-red-50: #ff385c80;
+$radical-red: #ff385c;
+$raisin-black30: #2222224d;
+$raisin-black: #222222;
+$silver-foil: #b0b0b0;
+$silverFoil: #b0b0b0;
+$success: #178a53;
+$tart-orange: #fe4747;
+$vampire-black: #070e05;
+$baby-blue-eyes: #99c1fd;
 // function to get color schemes
 @function get-color($color-name, $variation: 'default') {
-    @return map-get($map: $color-name, $key: $variation);
-  }
+  @return map-get($map: $color-name, $key: $variation);
+}

@@ -1,0 +1,252 @@
+{
+    "FMV": "Find My Venue",
+    "common": {
+      "and": "and",
+      "counter-placeholder": "00",
+      "go-back": "Back",
+      "here": "here",
+      "invalid-input": "Invalid Input",
+      "per-year": "/year",
+      "privacy-policy": " Privacy policy",
+      "quantity": "Quantity",
+      "rate": "Rate",
+      "saved": "saved",
+      "terms-and-conditions": "Terms & Conditions ",
+      "total": "Total",
+      "usage-of-cookies": "including usage of cookies",
+      "year": "year",
+      "back": "Back"
+    },
+    "components": {
+      "header": {
+        "language": {
+          "title": "En"
+        },
+        "explore": {
+          "title": "Explore"
+        },
+        "listVenues": {
+          "title": "List your venue"
+        },
+        "login": {
+          "title": "Log in"
+        }
+      },
+      "input": {
+        "aria-label": "toggle password visibility"
+      },
+      "input-dropdown": {
+        "no-options-message": "No options present"
+      },
+      "venue-card": {
+        "capacity": "Capacity",
+        "min-spend": "Min. Spend",
+        "per-guest": "Per Guest",
+        "venues": "venues"
+      },
+      "sidebar": {
+        "dashboard": "Dashboard",
+        "enquiry": "Enquiry",
+        "my-team": "My Team",
+        "my-venues": "My Venues",
+        "settings": "Settings"
+      }
+    },
+    "pages": {
+      "landing-page": {
+        "auditorium": "Auditorium",
+        "ballroom": "Ballroom",
+        "button-label": "Register",
+        "contact-placeholder": "Enter your contact no.",
+        "find-my-venue": "Find my venue.",
+        "hotels": "Hotels",
+        "list-your": "List your",
+        "name-placeholder": "Enter your full name",
+        "restaurants": "Restaurants",
+        "subtitle": "Join thousands of hosts renting their space for events on ",
+        "success-subtitle": "Your details have been submitted!",
+        "success-title": "For Registering With Us",
+        "thank-you": " Thank You! ",
+        "title": "for a profitable opportunity!",
+        "venue-name-placeholder": "Enter venue name",
+        "venue": "Venue",
+        "work-email-placeholder": "Enter your work email"
+      },
+      "venue-type-page": {
+        "button-label": "Continue",
+        "description": "Choose the type of Venue you would want to list, this will help us find a suitable plan for your needs",
+        "subtitle": "Choose the type of Venue you would want to list,",
+        "title": "Type of Venue"
+      },
+      "onboarding": {
+        "agree": "I agree to all the ",
+        "button-text": "Verify Email",
+        "registration-form": {
+          "button-label": "Register"
+        },
+        "chip-card": {
+          "button-label": "Continue",
+          "coupon-title": "Start your Free 6 Month Trial",
+          "header-subtitle": "This will help us find the best plan for you",
+          "header-title": "Tell us more about your venue",
+          "title": "Select the type of venues you have"
+        },
+        "cancellation-policy": " Cancellation policy",
+        "confirm-password-placeholder": "Re-enter your password",
+        "create-password-placeholder": "Create a password",
+        "error-text": "Error",
+        "expire-text": "Expires in 30 seconds",
+        "footer-subtitle": " click here to try again",
+        "footer-title": "If you haven’t received an email after a while.",
+        "full-name-placeholder": "Enter Full Name",
+        "heading": "Please fill in the details below to",
+        "heading-highlight": "Register",
+        "login": "Log in",
+        "password-placeholder": "Create Password",
+        "resend-text": "Resend",
+        "six-month-free": "First 6 months free",
+        "sub-heading": "Ready to list your venue?",
+        "subtitle": "We have sent a 6 digit OTP to your email kushal@designcoz.com",
+        "success-subtitle": "We’ve sent an email to {{email}} to verify your email address and activate your account.",
+        "title": "Verify your email",
+        "toast-title": "Resent successfully, please check your email",
+        "work-email-placeholder": "user@workapp.com",
+        "login-page": {
+          "bottom-heading": "If you haven’t received an email after a minute.",
+          "bottom-heading-highlight": "click here to try again",
+          "button-label": "Log in ",
+          "checked-email": "Check your email",
+          "email-message-end": ". It has a link that’ll log you in.",
+          "email-message-start": "We’ve sent an email to ",
+          "forgot-password": "Forgot Password?",
+          "heading": "Log in as",
+          "heading-highlight": "Venue Owner",
+          "password-placeholder": "Enter your password",
+          "question": "Don’t have an account?",
+          "register": "Register",
+          "sub-heading": "Welcome back! Log in and continue your journey."
+        },
+        "reset-password": {
+          "button-label": "Send Email",
+          "click-link": "Click on the link to reset your password",
+          "email-sent-subtitle": "We just emailed you a reset link to {{email}}. Click on the link to reset your password",
+          "email-sent-title": "Reset Password Email Sent",
+          "password-update-subtitle": "Your password has been updated successfully. Redirecting to login page.",
+          "password-update-title": "Password Updated",
+          "subTitle": "Enter your email linked to your account and we’ll send you a link to reset your password.",
+          "title": "Reset Password",
+          "update-password": "Update Password",
+          "wrong-email": "Entered wrong email? "
+        },
+        "registration-page": {
+          "agree": "I agree to all the ",
+          "button-label": "Register",
+          "full-name-placeholder": "Enter Full Name",
+          "heading": "Please fill in the details below to",
+          "heading-highlight": "Register",
+          "login": "Log in",
+          "question": "Already have an account? ",
+          "sub-heading": "Ready to list your venue?"
+        }
+      },
+      "not-found": {
+        "title": "404 Not Found"
+      },
+      "plan-screen": {
+        "additional-charges": "Additional Charges",
+        "base-charge": "Base Charge",
+        "button": "Start Your Free 6 Months",
+        "contact-us": " contact us ",
+        "coupon-text": "FREE 6 MONTHS TRIAL",
+        "edit-plan": "Edit Plan",
+        "email-reminder": "we’ll send email reminder before your subscription begins on {{date}}. Cancel anytime.",
+        "find-my-venue-link": "Findmyvenue.com",
+        "first-six-month": "First 6 months free",
+        "grand-total": "Grand Total",
+        "help-text": "we’re free to help you!",
+        "hotel-plan": "Hotel Plan",
+        "loader-card-subtitle": "Please wait for a moment.....",
+        "loader-card-title": "Creating a plan suitable to your venue",
+        "pay-zero-dollar": "Pay now $0",
+        "plan-benefits": "Plan Benefits",
+        "plan-breakDown": "Plan Breakdown",
+        "queries": "For any queries",
+        "sub-total": "Sub Total",
+        "subscription-cancel": "You'll get a reminder email before your subscription begins on {{date}}. Cancel anytime.",
+        "subtitle": "We found this plan to be best suited for your needs",
+        "tax": "VAT service fee ({{percentageValue}}%)",
+        "title": "Take a look at our plan suitable for your needs!",
+        "venue-plan": "Venue Plan",
+        "work-email-placeholder": "user@workapp.com",
+        "zero-dollar-payment": "Make a zero-dollar payment now, with your subscription plan starting after six months, when you'll be charged."
+      },
+      "payment-success": {
+        "title": "Payment successful",
+        "subtitle": "Creating your dashboard experience...."
+      },
+      "hotel-details": {
+        "all-venues-not-restaurant": "All venues which are not restaurants",
+        "button-label": "Continue",
+        "checkbox-title": "Would you like to list your stay along with Venues for events?",
+        "multi-venue-selection": "Choose the total no. of venue available in your property",
+        "no-label": "No",
+        "restaurants-subtitle": "Cafes, bars, restaurants and food places.",
+        "restaurants-title": "Restaurants",
+        "same-location-question": "Are your venues at the same location ?",
+        "subtitle": "This will help us find the best plan for you",
+        "title": "Tell us more about your venue",
+        "trial-offer": "Start your Free 6 Month Trial",
+        "type-of-venue": "Type of Venue",
+        "unique-branches-own": "How many unique branches you own?",
+        "venues-subtitle": "All venues which are not restaurants",
+        "venues-title": "Venues",
+        "venues-tooltip-hotel": "Make sure all the venues are part of the same hotel for example ballroom, meeting room, beach, lawn",
+        "venues-tooltip-multi": "A multi-venue is a complex or facility that houses multiple event spaces within the same location, excluding any areas designated for restaurant services.",
+        "with-alcohol": "With Alcohol",
+        "without-alcohol": "Without Alcohol",
+        "work-email-placeholder": "user@workapp.com",
+        "yes-label": "Yes"
+      },
+      "home-page": {
+        "introduction": {
+          "auditions": "Auditions",
+          "button-label": "Search",
+          "event-name-label": "Event/Venue",
+          "event-name": "Enter Event/Venue",
+          "location": "Enter Location",
+          "location-label": "Location",
+          "number-of-guests": "Enter no. of guests",
+          "question": "Are you looking for venue + hotel accommodation?",
+          "title-start": "Search & Compare",
+          "title-end": "Venues Across UAE."
+        },
+        "list-your-venue": {
+          "button-label": "List Your Venue",
+          "listing-space": "Reach thousands of seasoned event organizers by listing your space with us.",
+          "title": "List your venue and get bookings!"
+        }
+      },
+      "billing-information": {
+        "address-line1-input-label": "Address Line 1",
+        "address-line1-input-placeholder": "House number and street name",
+        "address-line2-input-label": "Address Line 2",
+        "address-line2-input-placeholder": "Apartment number suite number",
+        "area-input-label": "Area",
+        "area-input-placeholder": "Select area",
+        "billing-address": "Billing Address",
+        "button-label": "Continue",
+        "city-input-label": "City",
+        "city-input-placeholder": "Select city name",
+        "country-input-label": "Country",
+        "country-input-placeholder": "Select country name",
+        "country-name": "United Arab Emirates",
+        "enter-input-placeholder": "Enter your input",
+        "invoice-input-label": "What name should we use on the invoice?",
+        "po-box-input-label": "PO Box",
+        "po-box-input-placeholder": "Enter PO Box",
+        "title": "Billing Information",
+        "trn-number-input-label": "TRN No."
+      }
+    }
+  }
+  

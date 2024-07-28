@@ -1,0 +1,126 @@
+@import '../../../../theme/colors';
+@import '../../../../theme/spacing';
+@import '../../../../theme/typography';
+@import '../../../../theme/breakingpoints';
+@import '../../../../theme/mixins';
+
+ //357 - w 509-height
+.itemsCard {
+  &__container {
+    background-color: get-color($neutral, 100);
+    border-radius: $spacing-8;
+    border: $spacing-5 solid transparent;
+    box-shadow: 0 $spacing-1 $spacing-2 0 rgba(0, 0, 0, 0.05);
+    height: 550px;
+    width: 91%;
+  }
+
+  &__imageContainer {
+    // background-color: rgb(239, 205, 255);
+    height: $spacing-290;
+    object-fit: cover;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute; /* Ensure the image covers the entire container */
+    top: 0;
+    left: 0;
+    z-index: 0; /* Ensure the image is below the icon */
+    border-radius: 8px;
+  }
+
+  &__icon {
+    cursor: pointer;
+    position: absolute;
+    right: $spacing-8;
+    top: $spacing-8;
+    z-index: 1;
+  }
+
+  &__optionsContainer {
+    background-color: get-color($neutral, 100);
+    border-radius: $spacing-8;
+    box-shadow: 0 $spacing-2 $spacing-4 rgba(0, 0, 0, 0.1);
+    padding: $spacing-4 $spacing-0;
+    position: absolute;
+    right: $spacing-8;
+    top: $spacing-48;
+    width: 30%;
+    z-index: 1;
+  }
+
+  &__option {
+    cursor: pointer;
+    padding: $spacing-8 $spacing-12;
+    transition: background-color 0.3s ease;
+    &:hover {
+      background-color: get-color($neutral, 01);
+    }
+  }
+
+  &__optionText.MuiTypography-root {
+    color: $raisin-black;
+    font-family: $primary-font;
+    font-size: $spacing-14;
+    font-weight: $font-weight-regular;
+    line-height: $spacing-22;
+  }
+
+  &__contentContainer {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-8;
+    padding: $spacing-16 $spacing-12;
+  }
+
+  &__titleContainer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title.MuiTypography-root {
+    color: $raisin-black;
+    font-family: $primary-font;
+    font-size: $spacing-20;
+    font-weight: $font-weight-medium;
+    line-height: $spacing-32;
+    @include sm {
+      font-size: $spacing-14;
+    }
+  }
+
+  &__subTitle.MuiTypography-root {
+    color: get-color($neutral, 450);
+    font-family: $primary-font;
+    font-size: $spacing-16;
+    font-weight: $font-weight-medium;
+    line-height: $spacing-24;
+    @include sm {
+      font-size: $spacing-14;
+    }
+  }
+
+  &__descriptionContainer {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: $spacing-8;
+  }
+
+  &__description {
+    color: get-color($neutral, 600);
+    font-family: $primary-font;
+    font-size: $spacing-16;
+    font-weight: $font-weight-medium;
+  }
+
+  &__button.MuiButton-root {
+    align-self: flex-end;
+  }
+}

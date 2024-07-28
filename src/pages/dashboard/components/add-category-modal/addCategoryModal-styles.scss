@@ -1,0 +1,18 @@
+.addItemModal__container {
+    width: 300px;
+    max-width: 80%;
+    margin: 0 auto;
+  
+    .MuiTextField-root {
+      margin-bottom: 16px;
+    }
+
+    &__button .MuiButton-root {
+        padding: 0px;
+    }
+
+    &__inputFieldContainer.MuiContainer-root {
+      padding: 0px;
+  }
+  }
+  

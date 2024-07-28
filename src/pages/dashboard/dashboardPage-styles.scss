@@ -1,0 +1,87 @@
+@import '../../theme/colors';
+@import '../../theme/spacing';
+@import '../../theme/typography';
+@import '../../theme/breakingpoints';
+@import '../../theme/mixins';
+
+/* Base styles for light and dark modes */
+.dashboardPage {
+  &__container {
+    background-color: get-color($neutral, 01);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    transition: background-color 0.3s ease;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: $spacing-4;
+    box-sizing: border-box;
+    border-bottom: 2px solid get-color($neutral, 04);
+    background-color: get-color($neutral, 100);
+  }
+
+  &__icon {
+    cursor: pointer;
+    padding-right: 24px;
+  }
+
+  &__title.MuiTypography-root {
+    color: get-color($primary, 01);
+    font-family: $primary-font;
+    font-size: $spacing-28;
+    font-weight: $font-weight-medium;
+    padding: 8px;
+  }
+
+  &__cardsTitleContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__cardsIconsContainer {
+    align-items: center;  
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__subContainer {
+    display: flex;
+    height: calc(100% - 64px);
+    overflow: hidden;
+  }
+
+  &__cardsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    width: 100%;
+    padding: 16px;
+    overflow: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  &__cardsContainerTitle.MuiTypography-root {
+    color: $raisin-black;
+    font-family: $primary-font;
+    font-size: $spacing-28;
+    font-weight: $font-weight-semi-bold;
+    line-height: $spacing-44;
+  }
+
+  &__cardsSubContainer {
+    display: grid;
+    height: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    overflow-y: auto;
+  }
+}
