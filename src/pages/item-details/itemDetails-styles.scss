@@ -1,0 +1,45 @@
+@import '../../theme/colors';
+@import '../../theme/spacing';
+@import '../../theme/typography';
+@import '../../theme/breakingpoints';
+@import '../../theme/mixins';
+
+.itemsDetails {
+    &__container{
+        font-family: $primary-font;
+        padding: 2rem;
+        background-color: get-color($neutral, 100);
+        color: get-color($shade, 02);
+    }
+    &__title {
+        font-size: 2rem;
+        font-weight: $font-weight-bold;
+        color: get-color($primary, 01);
+    }
+
+  &__image {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border: 2px solid get-color($primary, 02);
+    box-shadow: 0 4px 8px get-color($shade, 02);
+
+    @include sm {
+      max-width: 100%;
+    }
+  }
+
+ &__price {
+    font-size: 1.5rem;
+    font-weight: $font-weight-semi-bold;
+    color: get-color($primary, 02);
+    margin-top: 1rem;
+  }
+
+  &__description {
+    margin-top: 1rem;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: get-color($neutral, 500);
+  }
+}

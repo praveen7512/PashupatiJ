@@ -1,3 +1,9 @@
+@import '../../theme/colors';
+@import '../../theme/spacing';
+@import '../../theme/typography';
+@import '../../theme/breakingpoints';
+@import '../../theme/mixins';
+
 .loginPage {
   &__container {
     display: flex;
@@ -20,7 +26,7 @@
   }
 
   &__contentContainer {
-    flex: 1; /* Take up 50% of the width */
+    flex: 1; 
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -37,7 +43,23 @@
     width: 50%;
   }
 
-  &__inputContainer {
-    
+  &__inputContainer.MuiContainer-root {
+    padding: 0px;
+  }
+
+  &__title.MuiTypography-root {
+    color: $raisin-black;
+    font-family: $primary-font;
+    font-size: $spacing-28;
+    font-weight: $font-weight-bold;
+    line-height: $spacing-44;
+  }
+
+  &__subTitle.MuiTypography-root {
+    color: $raisin-black;
+    font-family: $primary-font;
+    font-size: $spacing-20;
+    font-weight: $font-weight-semi-bold;
+    line-height: $spacing-36;
   }
 }

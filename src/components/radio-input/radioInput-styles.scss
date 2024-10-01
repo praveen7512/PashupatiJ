@@ -1,0 +1,43 @@
+@import '../../theme/colors';
+@import '../../theme/spacing';
+@import '../../theme/typography';
+@import '../../theme/breakingpoints';
+@import '../../theme/mixins';
+
+.radioInput {
+    &__container.MuiFormControl-root{
+        display: flex;
+        flex-direction: row;
+    }
+  
+    &__label.MuiFormLabel-root {
+      font-family: $primary-font;
+      font-weight: $font-weight-medium;
+      color: get-color($shade, 02);
+    }
+  
+    &__group.MuiFormGroup-root {
+      display: flex;
+      flex-direction: row;
+    }
+  
+    &__option.MuiFormControlLabel-root .MuiFormControlLabel-label {
+        font-family: $secondary-font;
+        font-weight: $font-weight-regular;
+        color: get-color($neutral, 500);
+    }
+
+    .MuiTypography-root {
+        font-family: $secondary-font;
+        font-weight: $font-weight-regular;
+    }
+}
+
+@include sm {
+    .radioInput {
+        &__group{
+            flex-direction: column;
+        }
+    }
+}
+  

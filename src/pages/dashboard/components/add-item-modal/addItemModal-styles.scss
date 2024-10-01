@@ -16,4 +16,18 @@
     &__inputFieldContainer.MuiContainer-root {
         padding: 0px;
     }
+
+    &__imageContainer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__imageContainerTitle.MuiTypography-root {
+        color: $raisin-black;
+        font-family: $primary-font;
+        font-size: $spacing-16;
+        font-weight: $font-weight-regular;
+        line-height: $spacing-25;
+    }
 }

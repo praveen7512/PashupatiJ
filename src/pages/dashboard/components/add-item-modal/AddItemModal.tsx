@@ -1,22 +1,30 @@
-import { useState } from "react";
-import { PJButton, PJInput } from "@components";
-
+import { useState, useRef } from "react";
+import { PJButton, PJInput, PJRadioInput } from "@components";
 import './addItemModal-styles.scss';
 
-interface IAddItemModalProps {
-    onAddItem: (item: { key: number, title: string, price: string, description: string }) => void;
+import CollectionsIcon from '@mui/icons-material/Collections';
+import { Typography } from "@mui/material";
+import { API_KEY, API_PATHS } from "@constants";
+
+  interface IAddItemModalProps {
+    onAddItem: (item: { _id: number, title: string, amount: string, description: string, gender: string, material: string, imageNames: File[], category: number }) => void;
+    categoryId: string;
 }
 
 const AddItemModal = (props: IAddItemModalProps) => {
-    const { onAddItem } = props;
+    const { onAddItem, categoryId } = props;
     const [title, setTitle] = useState('');
     const [price, setPrice] = useState('');
     const [description, setDescription] = useState('');
-    const [image, setImage] = useState('');
+    const [images, setImages] = useState<File[]>([]); 
     const [isTitleError, setIsTitleError] = useState(false);
     const [isPriceError, setIsPriceError] = useState(false);
     const [isDescriptionError, setIsDescriptionError] = useState(false);
-    const [isImageError, setIsImageError] = useState(false);
+    const [gender, setGender] = useState('female');
+    const [material, setMaterial] = useState('gold');
+    const [errorMessage, setErrorMessage] = useState('');
+    
+    const fileInputRef = useRef<HTMLInputElement>(null);
 
     const handleTitleInputChange = (value: string) => {
         setTitle(value);
@@ -32,13 +40,22 @@ const AddItemModal = (props: IAddItemModalProps) => {
         setDescription(value);
         setIsDescriptionError(false);
     };
-
-    const handleImageInputChange = (value: string) => {
-        setImage(value);
-        setIsImageError(false);
+   
+    const handleImageInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const files = event.target.files;
+        if (files) {
+            setImages(prevImages => [...prevImages, ...Array.from(files)]);
+        }
     };
 
-    const handleAddItem = () => {
+    const handleIconClick = () => {
+        if (fileInputRef.current) {
+            fileInputRef.current.value = ''; 
+            fileInputRef.current.click();
+        }
+    };
+
+    const handleAddItem = async () => {
         if (title.trim() === '') {
             setIsTitleError(true);
             return;
@@ -47,16 +64,64 @@ const AddItemModal = (props: IAddItemModalProps) => {
             setIsPriceError(true);
             return;
         }
+        const numericPrice = parseFloat(price);
+        if (isNaN(numericPrice) || numericPrice <= 0) {
+            setIsPriceError(true);
+            setErrorMessage("Please enter a valid positive number for the price.");
+            return;
+        }
         if (description.trim() === '') {
             setIsDescriptionError(true);
             return;
         }
-        if (image.trim() === '') {
-            setIsImageError(true);
+        if (images.length === 0) {
+            setErrorMessage("Add at least one image");
             return;
         }
-        const newItem = { key: Date.now(), title, price, description, image };
-        onAddItem(newItem);
+
+        const formData = new FormData();
+        formData.append('title', title);
+        formData.append('description', description);
+        formData.append('amount', numericPrice.toString()); 
+        formData.append('category', categoryId);
+        formData.append('gender', gender);
+        formData.append('metalType', material);
+
+        images.forEach((image) => {
+            formData.append('images', image);
+        });
+
+        try {
+            const response = await fetch(API_PATHS.BASE_URL + '/api/v1/product/', {
+                method: 'POST',
+                headers: {
+                    'X-API-Key': API_KEY
+                },
+                body: formData
+            });
+
+            if (!response.ok) {
+                const errorText = await response.text();
+                console.error('Full error response:', errorText);
+                throw new Error(errorText || 'Failed to add product');
+            }
+
+            const result = await response.json();
+            console.log('Product added successfully:', result);
+            onAddItem({
+                _id: result.data._id,
+                title: result.data.title,
+                amount: result.data.amount, 
+                description: result.data.description,
+                gender: result.data.gender,
+                material: result.data.metalType,
+                imageNames: images,
+                category: result.data.category
+            }); 
+        } catch (error) {
+            console.error('Error adding product:', error);
+            setErrorMessage(error instanceof Error ? error.message : 'Failed to add product. Please try again.');
+        }
     };
 
     return (
@@ -95,17 +160,39 @@ const AddItemModal = (props: IAddItemModalProps) => {
                 errorMessage="This is a required field"
                 hasBorder
             />
-            <PJInput
-                containerClass="addItemModal__inputFieldContainer"
-                handleChange={handleImageInputChange}
-                value={image}
-                label="Add product image"
-                placeholder="Enter the link of the product image here"
-                isFullWidth
-                isError={isImageError}
-                errorMessage="This is a required field"
-                hasBorder
+            <PJRadioInput
+                selectedValue={gender}
+                handleChange={setGender}
+                label="Select Gender"
+                options={[
+                    { value: 'female', label: 'Female' },
+                    { value: 'male', label: 'Male' },
+                    { value: 'unisex', label: 'Unisex' },
+                ]}
             />
+            <PJRadioInput
+                selectedValue={material}
+                handleChange={setMaterial}
+                label="Select Material"
+                options={[
+                    { value: 'gold', label: 'Gold' },
+                    { value: 'silver', label: 'Silver' },
+                    { value: 'platinum', label: 'Platinum' },
+                    { value: 'other', label: 'Other' },
+                ]}
+            />
+            <div className="addItemModal__imageContainer">
+                <Typography className="addItemModal__imageContainerTitle">Add product images</Typography>
+                <input
+                    type="file"
+                    ref={fileInputRef}
+                    style={{ display: 'none' }}
+                    accept="image/*"
+                    multiple 
+                    onChange={handleImageInputChange}
+                />
+                <CollectionsIcon style={{ fontSize: 40, cursor: 'pointer' }} onClick={handleIconClick} />
+            </div>
             <PJButton handleClick={handleAddItem} title="Add" buttonClass="addItemModal__button" isFullWidth />
         </div>
     );

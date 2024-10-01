@@ -1,11 +1,19 @@
 export interface IItem {
-    key: number;
+    _id: number;
     title: string;
-    price: string;
+    amount: string;
     description: string;
-    image: string;
-}
+    gender: string;
+    metalType: string;
+    imageNames: File[];
+    category: number;
+  }
 
 export interface IItemsState {
     [key: string]: IItem[];
+}
+
+export interface Category {
+    id: string;
+    name: string;
 }

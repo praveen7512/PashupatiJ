@@ -10,6 +10,7 @@ interface INavBarProps {
 
 const NavBar = (props: INavBarProps) => {
   const { categories, handleOpenModal, handleCategoryClick, selectedCategory } = props;
+  console.log(categories)
 
   return (
     <div className="navBar__container">
