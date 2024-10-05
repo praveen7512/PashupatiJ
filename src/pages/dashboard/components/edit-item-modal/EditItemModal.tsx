@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import { PJButton, PJInput, PJRadioInput } from "@components";
 import './editItemModal-styles.scss';
 import { IItem } from '@types';
@@ -15,7 +15,7 @@ interface EditItemModalProps {
 const EditItemModal = (props: EditItemModalProps) => {
   const { item, onEditItem, onClose } = props;
   const [editedItem, setEditedItem] = useState<IItem>(item);
-  const [existingImages, setExistingImages] = useState<File[]>(
+  const [existingImages] = useState<File[]>(
     Array.isArray(item.imageNames) 
       ? item.imageNames.map(img => img instanceof File ? img : new File([], img))
       : []
@@ -24,20 +24,10 @@ const EditItemModal = (props: EditItemModalProps) => {
   const [isTitleError, setIsTitleError] = useState(false);
   const [isPriceError, setIsPriceError] = useState(false);
   const [isDescriptionError, setIsDescriptionError] = useState(false);
-  const [errorMessage, setErrorMessage] = useState('');
+  let [errorMessage, setErrorMessage] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const fileInputRef = useRef<HTMLInputElement>(null);
-
-  // useEffect(() => {
-  //   // Ensure material and gender are always set
-  //   if (!editedItem.material) {
-  //     setEditedItem(prev => ({ ...prev, material: 'other' }));
-  //   }
-  //   if (!editedItem.gender) {
-  //     setEditedItem(prev => ({ ...prev, gender: 'unisex' }));
-  //   }
-  // }, []);
 
   const handleInputChange = (field: keyof IItem, value: string) => {
     setEditedItem({ ...editedItem, [field]: value });
@@ -80,7 +70,8 @@ const EditItemModal = (props: EditItemModalProps) => {
     const numericPrice = parseFloat(editedItem.amount.toString());
     if (isNaN(numericPrice) || numericPrice <= 0) {
       setIsPriceError(true);
-      setErrorMessage("Please enter a valid positive number for the price.");
+      errorMessage = "Please enter a valid positive number for the price.";
+      setErrorMessage(errorMessage);
       return;
     }
     if (editedItem.description.trim() === '') {

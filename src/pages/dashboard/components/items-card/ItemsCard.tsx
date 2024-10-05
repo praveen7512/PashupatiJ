@@ -18,7 +18,7 @@ interface ItemsCardProps {
 const ItemsCard: React.FC<ItemsCardProps> = ({ item, onItemUpdate, onItemDelete }) => {
   const [areOptionsVisible, setAreOptionsVisible] = useState(false);
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  let [error, setError] = useState<string | null>(null);
   
   const navigate = useNavigate();
 
@@ -30,6 +30,7 @@ const ItemsCard: React.FC<ItemsCardProps> = ({ item, onItemUpdate, onItemDelete 
   const handleEditItem = async (updatedItem: IItem) => {
     setError(null);
     if (updatedItem.title.trim() === '') {
+      error = 'Title is required';
       setError('Title is required');
       return;
     }

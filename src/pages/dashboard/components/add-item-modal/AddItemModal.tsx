@@ -7,7 +7,7 @@ import { Typography } from "@mui/material";
 import { API_KEY, API_PATHS } from "@constants";
 
   interface IAddItemModalProps {
-    onAddItem: (item: { _id: number, title: string, amount: string, description: string, gender: string, material: string, imageNames: File[], category: number }) => void;
+    onAddItem: (item: { _id: number, title: string, amount: string, description: string, gender: string, metalType: string, imageNames: File[], category: number }) => void;
     categoryId: string;
 }
 
@@ -22,7 +22,7 @@ const AddItemModal = (props: IAddItemModalProps) => {
     const [isDescriptionError, setIsDescriptionError] = useState(false);
     const [gender, setGender] = useState('female');
     const [material, setMaterial] = useState('gold');
-    const [errorMessage, setErrorMessage] = useState('');
+    let [errorMessage, setErrorMessage] = useState('');
     
     const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -75,7 +75,8 @@ const AddItemModal = (props: IAddItemModalProps) => {
             return;
         }
         if (images.length === 0) {
-            setErrorMessage("Add at least one image");
+            errorMessage = "Add at least one image";
+            setErrorMessage(errorMessage);
             return;
         }
 
@@ -114,13 +115,12 @@ const AddItemModal = (props: IAddItemModalProps) => {
                 amount: result.data.amount, 
                 description: result.data.description,
                 gender: result.data.gender,
-                material: result.data.metalType,
+                metalType: result.data.metalType,
                 imageNames: images,
                 category: result.data.category
             }); 
         } catch (error) {
             console.error('Error adding product:', error);
-            setErrorMessage(error instanceof Error ? error.message : 'Failed to add product. Please try again.');
         }
     };
 

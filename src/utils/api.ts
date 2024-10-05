@@ -1,6 +1,6 @@
 // api.ts
 import { API_KEY, API_PATHS, ApiMethods } from '@constants';
-import { Category, IItem, IItemsState } from '@types';
+import { Category, IItem } from '@types';
 
 const apiHeaders = {
   'x-api-key': API_KEY,

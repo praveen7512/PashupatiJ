@@ -1,6 +1,10 @@
 import './addButton-styles.scss';
 
-const AddButton = (props) => {
+interface IAddButtonProps {
+  handleClick: () => void;
+}
+
+const AddButton = (props: IAddButtonProps) => {
     const { handleClick } = props;
   return (
     <button className="learn-more" onClick={handleClick}>

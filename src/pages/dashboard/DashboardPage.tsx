@@ -91,7 +91,7 @@ const DashboardPage = () => {
       setProducts([]);
 
       try {
-        const fetchedProducts = await fetchProductsByCategoryId(selectedCat.id); // Use the function here
+        const fetchedProducts = await fetchProductsByCategoryId(selectedCat.id);
         console.log('Fetched products:', fetchedProducts);
         setProducts(fetchedProducts);
       } catch (error) {
@@ -159,7 +159,7 @@ const DashboardPage = () => {
 
   const handleDeleteItem = async (item: IItem) => {
     try {
-      await deleteItem(item._id); // Use the function here
+      await deleteItem(item._id); 
       setProducts(prevProducts => prevProducts.filter(product => product._id !== item._id));
       console.log('Item successfully deleted');
     } catch (error) {
@@ -180,7 +180,7 @@ const DashboardPage = () => {
     }
   
     try {
-      await deleteCategory(selectedCategoryObj.id); // Use the function here
+      await deleteCategory(selectedCategoryObj.id); 
       console.log('Category successfully deleted:', selectedCategoryObj.name);
   
       const updatedCategories = categories.filter(category => category.id !== selectedCategoryObj.id);
@@ -231,7 +231,7 @@ const DashboardPage = () => {
         <AddItemModal onAddItem={handleAddItem} categoryId={selectedCategoryId} />
       </PJModal>
       <PJModal open={isEditCategoryModalOpen} onClose={handleToggleEditCategoryModal} headerTitle="Edit category" subHeaderTitle="Add details of the new category below">
-        <EditCategoryModal onEditCategory={handleEditCategory} selectedCategory={selectedCategory} />
+        <EditCategoryModal onEditCategory={handleEditCategory} selectedCategory={selectedCategory} onClose={handleToggleModal} />
       </PJModal>
     </div>
   );

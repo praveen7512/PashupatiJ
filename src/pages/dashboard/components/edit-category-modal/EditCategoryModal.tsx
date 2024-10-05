@@ -1,9 +1,15 @@
 import { PJButton, PJInput } from "@components";
 import { useState } from "react";
 
-const EditCategoryModal = (props) => {
-    const { category, onEditCategory, onClose } = props;
-    const [editedCategory, setEditedCategory] = useState(category);
+interface IEditCategoryModalProps {
+  selectedCategory: string;
+  onEditCategory: (editedCategory: string) => void;
+  onClose: () => void;
+}
+
+const EditCategoryModal = (props: IEditCategoryModalProps) => {
+    const { selectedCategory, onEditCategory, onClose } = props;
+    const [editedCategory, setEditedCategory] = useState(selectedCategory);
     const [isCategoryError, setIsCategoryError] = useState(false);   
 
     const handleCategoryInputChange = (value:string) => {
