@@ -31,7 +31,7 @@ const ItemsCard: React.FC<ItemsCardProps> = ({ item, onItemUpdate, onItemDelete 
     setError(null);
     if (updatedItem.title.trim() === '') {
       error = 'Title is required';
-      setError('Title is required');
+      setError(error);
       return;
     }
     if (updatedItem.amount === '') {
