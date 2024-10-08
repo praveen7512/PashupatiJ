@@ -5,10 +5,10 @@ export enum ApiMethods {
     Put = "PUT"
 }
 
-export const API_KEY = import.meta.env.VITE_API_KEY;
+export const API_KEY = "abhijeetchehakvivek"
 
 export const API_PATHS = {
-    BASE_URL: import.meta.env.VITE_BASE_URL,
+    BASE_URL: "http://13.127.168.173:3000",
     POST_CATEGORY: "/api/v1/category/",
     POST_PRODUCTS: "/api/v1/product/"
 };
